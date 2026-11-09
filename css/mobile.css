@@ -1,0 +1,80 @@
+/* =====================
+   DESKTOP LAYOUT
+===================== */
+#home {
+    display: block; /* tampilkan desktop secara default */
+}
+
+/* HOME MOBILE - default hidden */
+#home_mobile {
+    display: none;
+}
+
+/* =====================
+   MOBILE LAYOUT (≤768px)
+===================== */
+@media only screen and (max-width: 768px) {
+
+    /* Sembunyikan desktop section */
+    #home {
+        display: none;
+    }
+
+    /* Tampilkan mobile section */
+    #home_mobile {
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Container mobile */
+    .container_mobile {
+        display: flex;
+        flex-direction: column; /* layout vertikal */
+        align-items: center;
+        gap: 20px; /* jarak antar elemen */
+    }
+
+    /* Gambar di atas, terpusat */
+    .home_mobile_image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home_mobile_image img {
+        width: 80%;       /* sesuaikan ukuran gambar */
+        max-width: 300px; /* batas maksimal */
+        height: auto;
+        display: block;
+        margin: 0 auto;   /* center gambar */
+    }
+	/* Mobile-only subtitle text & link */
+	.mobile_subtitle {
+		font-size: 16px;
+		line-height: 1.5;
+		color: #6a6868;       /* warna teks sama untuk semua */
+		text-align: center; 
+	}
+
+	/* Link di dalam mobile_subtitle */
+	.mobile_subtitle a {
+		color: inherit;        /* ambil warna teks normal */
+		text-decoration: none; /* hilangkan garis bawah */
+	}
+
+	/* Hover effect untuk link */
+	.mobile_subtitle a:hover {
+		text-decoration: underline; /* garis bawah saat hover */
+		color: #a8a8a8;             /* optional: warna hover */
+	}
+}
+
+/* =====================
+   OPTIONAL - HIDE MOBILE IN DESKTOP
+===================== */
+@media only screen and (min-width: 769px) {
+    #home_mobile {
+        display: none;
+    }
+}
